@@ -1,54 +1,69 @@
-# C++ objects and libs
-*.slo
-*.lo
-*.o
-*.a
-*.la
-*.lai
-*.so
-*.so.*
-*.dll
-*.dylib
-
-# Qt-es
-object_script.*.Release
-object_script.*.Debug
-*_plugin_import.cpp
-/.qmake.cache
-/.qmake.stash
+# Qt Creator 项目文件
 *.pro.user
 *.pro.user.*
 *.qbs.user
 *.qbs.user.*
-*.moc
-moc_*.cpp
-moc_*.h
-qrc_*.cpp
-ui_*.h
+
+# QML 缓存文件
 *.qmlc
 *.jsc
-Makefile*
-*build-*
-*.qm
-*.prl
 
-# Qt unit tests
-target_wrapper.*
+# 编译产物
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.dylib
+*.exe
+*.out
+*.pdb
+*.ilk
+*.idb
 
-# QtCreator
+# Qt UI 编译生成文件
+moc_*
+ui_*
+qrc_*
+
+# CMake 缓存和生成目录
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Qt Creator 生成的 build 文件夹（默认或命名过的）
+build/
+build-*/
 *.autosave
 
-# QtCreator Qml
-*.qmlproject.user
-*.qmlproject.user.*
+# Visual Studio
+*.vcxproj*
+*.sln
+*.suo
+*.ncb
+*.opensdf
+*.log
+*.tlog
+*.ipch
+*.psess
+*.vsp
+*.user
+*.cache
+*.db
+*.VC.db
+*.VC.opendb
 
-# QtCreator CMake
-CMakeLists.txt.user*
+# JetBrains (CLion 等)
+.idea/
+*.iml
 
-# QtCreator 4.8< compilation database
-compile_commands.json
+# macOS
+.DS_Store
 
-# QtCreator local machine specific files for imported projects
-*creator.user*
+# Linux
+*~
 
-*_qmlcache.qrc
+# Windows
+Thumbs.db
+desktop.ini
