@@ -1,0 +1,3391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1035</width>
+    <height>622</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QPushButton" name="settings_button">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>550</y>
+     <width>132</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Themes/Assets/settings_button.svg</normaloff>:/Themes/Assets/settings_button.svg</iconset>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>153</y>
+     <width>301</width>
+     <height>378</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="MydayButton">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft YaHei UI</family>
+        <pointsize>11</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
+        <kerning>true</kerning>
+        <hintingpreference>PreferVerticalHinting</hintingpreference>
+        <fontweight>Thin</fontweight>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::FocusPolicy::WheelFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+text-align : left;</string>
+      </property>
+      <property name="text">
+       <string> 我的一天</string>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/JumpList/dark/MyDay_dark_256.png</normaloff>:/Themes/Assets/JumpList/dark/MyDay_dark_256.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="ClassesButton">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
+        <hintingpreference>PreferVerticalHinting</hintingpreference>
+        <fontweight>Thin</fontweight>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+text-align : left;</string>
+      </property>
+      <property name="text">
+       <string> 课表</string>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/JumpList/dark/Planned_dark_256.png</normaloff>:/Themes/Assets/JumpList/dark/Planned_dark_256.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="TaskButton">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
+        <hintingpreference>PreferVerticalHinting</hintingpreference>
+        <fontweight>Thin</fontweight>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+text-align : left;</string>
+      </property>
+      <property name="text">
+       <string> 番茄大师</string>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/JumpList/dark/Flag_dark_256.png</normaloff>:/Themes/Assets/JumpList/dark/Flag_dark_256.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>22</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="TaskButton_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
+        <hintingpreference>PreferVerticalHinting</hintingpreference>
+        <fontweight>Thin</fontweight>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+text-align : left;</string>
+      </property>
+      <property name="text">
+       <string>DeepSeek</string>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/deepseek.svg</normaloff>:/Themes/Assets/deepseek.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="WeatherLabel">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>39</y>
+     <width>204</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>10</y>
+     <width>701</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>212</x>
+       <y>95</y>
+       <width>280</width>
+       <height>253</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+        background-color: rgba(0, 0, 0, 0);  /* 完全透明背景 */
+        color: rgba(0, 0, 0, 0);             /* 隐藏按钮文字 */
+        border: none;                       /* 隐藏边框 */
+        padding: 0px;                        /* 移除内边距 */
+    }</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/Themes/Assets/suggestions-empty-state.scale-200.png</normaloff>:/Themes/Assets/suggestions-empty-state.scale-200.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>300</width>
+       <height>300</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>205</x>
+       <y>372</y>
+       <width>315</width>
+       <height>69</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Cambria</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Start Your Day from Now!</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_classsheet">
+    <widget class="QWidget" name="maincontextphoto_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>671</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#maincontextphoto_2
+{
+image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);
+
+}</string>
+     </property>
+     <widget class="QLabel" name="ClassSheetTiltleLabel">
+      <property name="geometry">
+       <rect>
+        <x>21</x>
+        <y>24</y>
+        <width>131</width>
+        <height>44</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>22</pointsize>
+        <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="text">
+       <string>课表</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::PlainText</enum>
+      </property>
+     </widget>
+     <widget class="QWidget" name="class_sheet_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>72</y>
+        <width>641</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(50, 50, 50, 110);</string>
+      </property>
+      <widget class="QLabel" name="nowdate_week">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>80</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(50, 50, 50, 120);</string>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="MondayLabel">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>0</y>
+         <width>70</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周一</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="TuesdayLabel">
+       <property name="geometry">
+        <rect>
+         <x>164</x>
+         <y>0</y>
+         <width>70</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周二</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ThursdayLabel">
+       <property name="geometry">
+        <rect>
+         <x>246</x>
+         <y>0</y>
+         <width>70</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周三</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="WednesdayLabel">
+       <property name="geometry">
+        <rect>
+         <x>328</x>
+         <y>0</y>
+         <width>70</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周四</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="FridayLabel">
+       <property name="geometry">
+        <rect>
+         <x>492</x>
+         <y>0</y>
+         <width>70</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周六</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="SaturdayLabel">
+       <property name="geometry">
+        <rect>
+         <x>572</x>
+         <y>0</y>
+         <width>70</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周日</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Sundaylabel">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>0</y>
+         <width>70</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周五</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>36</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>1
+8:00
+8:50</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>118</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>3
+10:50
+11:00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>200</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>5
+13:00
+13:50</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>77</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>2
+9:00
+9:50</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>282</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>7
+15:10
+16:00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>241</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>6
+14:00
+14:50</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>405</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>10
+19:30
+20:20</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>364</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>9
+18:40
+19:20</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>446</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>11
+20:30
+21:20</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>323</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>8
+16:10
+17:00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>159</y>
+         <width>70</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>4
+11:10
+12:00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>76</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_2">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>117</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>158</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_4">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>199</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_5">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>240</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_6">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>281</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_7">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>322</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_8">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>363</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_9">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>404</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_10">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>445</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_11">
+       <property name="windowModality">
+        <enum>Qt::WindowModality::NonModal</enum>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>486</y>
+         <width>641</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Sunken</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>70</y>
+        <width>21</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::MediaSkipForward"/>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>21</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::GoPrevious"/>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_class_by_hand">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>35</y>
+        <width>33</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/add_icon.svg</normaloff>:/Themes/Assets/add_icon.svg</iconset>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_class_from_web">
+      <property name="geometry">
+       <rect>
+        <x>615</x>
+        <y>35</y>
+        <width>33</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/download.svg</normaloff>:/Themes/Assets/download.svg</iconset>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back_to_home_week">
+      <property name="geometry">
+       <rect>
+        <x>93</x>
+        <y>29</y>
+        <width>39</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/main_home.svg</normaloff>:/Themes/Assets/main_home.svg</iconset>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="class_empty_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>219</x>
+        <y>216</y>
+        <width>250</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(20, 20, 20, 120);
+border-radius:10px</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_16">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>56</x>
+         <y>16</y>
+         <width>148</width>
+         <height>119</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+border-radius:10px</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/Themes/Assets/Illustrations/MyDayEmpty/MyDayEmpty.svg</normaloff>
+         <disabledoff>:/Themes/Assets/Illustrations/MyDayEmpty/MyDayEmpty.svg</disabledoff>:/Themes/Assets/Illustrations/MyDayEmpty/MyDayEmpty.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>110</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>63</x>
+         <y>129</y>
+         <width>130</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string>查询你的课表</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>164</y>
+         <width>227</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string>使用“课表”导入你的课程并去查看，这是
+一个随着周数而改变的课表</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <zorder>class_sheet_widget</zorder>
+     <zorder>ClassSheetTiltleLabel</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>pushButton_3</zorder>
+     <zorder>add_class_by_hand</zorder>
+     <zorder>add_class_from_web</zorder>
+     <zorder>back_to_home_week</zorder>
+     <zorder>class_empty_widget</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QWidget" name="setting_photo" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>671</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#setting_photo
+{
+image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);
+
+}</string>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>27</x>
+        <y>34</y>
+        <width>61</width>
+        <height>54</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>22</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>设置</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>27</x>
+        <y>88</y>
+        <width>65</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>背景图片</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>27</x>
+        <y>113</y>
+        <width>601</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="setting_grid_layout">
+       <item row="0" column="4">
+        <widget class="QPushButton" name="pushButton_8">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/fern/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/fern/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QPushButton" name="pushButton_0">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/gradient/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/gradient/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/beach/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/beach/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/field/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/field/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="pushButton_7">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/desert/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/desert/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="pushButton_9">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/lighthouse/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/lighthouse/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="pushButton_11">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/safari/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/safari/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QPushButton" name="pushButton_10">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/sea/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/sea/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QPushButton" name="pushButton_13">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/tv_tower/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/tv_tower/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QPushButton" name="pushButton_12">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 6px;
+        padding: 2px;
+    }
+    QPushButton:hover {
+        background-color: rgba(255, 255, 255, 20);
+    }
+    QPushButton:checked {
+        border: 2px solid #00CFFF;
+        background-color: rgba(0, 207, 255, 30);
+    }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/Themes/Assets/Themes/backgrounds/beach/thumb.jpg</normaloff>:/Themes/Assets/Themes/backgrounds/beach/thumb.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>28</x>
+        <y>363</y>
+        <width>85</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>学期开始周：</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="geometry">
+       <rect>
+        <x>128</x>
+        <y>364</y>
+        <width>129</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhPreferNumbers</set>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+      <property name="keyboardTracking">
+       <bool>false</bool>
+      </property>
+      <property name="showGroupSeparator" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="date">
+       <date>
+        <year>2025</year>
+        <month>2</month>
+        <day>17</day>
+       </date>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>28</x>
+        <y>388</y>
+        <width>251</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>你只需要输入你学期开始周的任意一天即可</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>28</x>
+        <y>415</y>
+        <width>85</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>所在地区：</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>127</x>
+        <y>414</y>
+        <width>131</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>北京</string>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear_temp_cache">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>514</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>清理本地缓存</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_Myday">
+    <widget class="QWidget" name="maincontextphoto" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>671</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#maincontextphoto
+{
+image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);
+
+}</string>
+     </property>
+     <widget class="QLabel" name="MydayLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>22</pointsize>
+        <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent</string>
+      </property>
+      <property name="text">
+       <string>我的一天</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::PlainText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="MydayDateLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>78</y>
+        <width>125</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="TodoList">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>120</y>
+        <width>611</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+      </property>
+      <widget class="QWidget" name="TodoListContent">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>609</width>
+         <height>409</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="addtodo">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>540</y>
+        <width>598</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+            background-color: rgba(0, 0, 0, 180);
+ border-radius: 10px;
+        }
+QLineEdit:focus {
+            background-color: rgba(50, 50,50, 180);
+        }
+QLineEdit:!focus:!hover {
+             background-color: rgba(20, 20, 20, 128);
+			color: white
+
+        }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string>添加任务</string>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::CursorMoveStyle::LogicalMoveStyle</enum>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TododatesetButton">
+      <property name="geometry">
+       <rect>
+        <x>544</x>
+        <y>540</y>
+        <width>31</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/canlendar.svg</normaloff>:/Themes/Assets/canlendar.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>15</width>
+        <height>15</height>
+       </size>
+      </property>
+      <property name="popupMode">
+       <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+      </property>
+      <property name="autoRaise">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TodotimesetButton">
+      <property name="geometry">
+       <rect>
+        <x>572</x>
+        <y>540</y>
+        <width>31</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/alarm.svg</normaloff>:/Themes/Assets/alarm.svg</iconset>
+      </property>
+      <property name="popupMode">
+       <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TodorepeatButton">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>540</y>
+        <width>30</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/repeat.svg</normaloff>:/Themes/Assets/repeat.svg</iconset>
+      </property>
+      <property name="popupMode">
+       <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="infolabel">
+      <property name="geometry">
+       <rect>
+        <x>515</x>
+        <y>540</y>
+        <width>96</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+color: white;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhNone</set>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="repeatinfolabel">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>540</y>
+        <width>55</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="edit_widget" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>379</x>
+        <y>21</y>
+        <width>304</width>
+        <height>584</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::FocusPolicy::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(40, 40, 40, 255);</string>
+      </property>
+      <widget class="QPushButton" name="set_todo_finished">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>32</y>
+         <width>35</width>
+         <height>46</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton { 
+background-color: rgba(50, 50, 50, 255);
+
+
+                              color: white; /* 文字颜色为白色 */ 
+                              border: none; /* 去掉边框 */ 
+                              border-bottom-left-radius: 10px;
+                              border-top-left-radius: 10px;
+                              icon: url(:/Themes/Assets/circle-large.svg); /* 正常状态图标 */ 
+                              padding-left: 10px;
+text-align: left; /* 文字居左 */ 
+}
+                   
+QPushButton:hover 
+{ 
+                              background-color: rgba(0, 0, 0, 128); /* 悬浮时背景颜色变深 */ 
+                              icon: url(:/Themes/Assets/circle-check.svg); /* 正常状态图标 */ 
+}
+
+
+                            </string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="edit_todo_title">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>32</y>
+         <width>184</width>
+         <height>46</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(50, 50, 50, 255);</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="set_todo_important">
+       <property name="geometry">
+        <rect>
+         <x>244</x>
+         <y>32</y>
+         <width>40</width>
+         <height>46</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(50, 50, 50, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/Themes/Assets/JumpList/dark/Imp_dark_256.png</normaloff>:/Themes/Assets/JumpList/dark/Imp_dark_256.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>106</y>
+         <width>256</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="reset_todo_time">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(50, 50, 50, 255);
+text-align: left;
+padding: 10px;</string>
+          </property>
+          <property name="text">
+           <string>  提醒我</string>
+          </property>
+          <property name="icon">
+           <iconset resource="res.qrc">
+            <normaloff>:/Themes/Assets/alarm.svg</normaloff>:/Themes/Assets/alarm.svg</iconset>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="reset_todo_date">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(50, 50, 50, 255);
+text-align: left;
+padding: 10px;</string>
+          </property>
+          <property name="text">
+           <string>  改变截止日期</string>
+          </property>
+          <property name="icon">
+           <iconset resource="res.qrc">
+            <normaloff>:/Themes/Assets/canlendar.svg</normaloff>:/Themes/Assets/canlendar.svg</iconset>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="reset_todo_repeat">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(50, 50, 50, 255);
+text-align: left;
+padding: 10px;
+</string>
+          </property>
+          <property name="text">
+           <string>  重复</string>
+          </property>
+          <property name="icon">
+           <iconset resource="res.qrc">
+            <normaloff>:/Themes/Assets/repeat.svg</normaloff>:/Themes/Assets/repeat.svg</iconset>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QTextEdit" name="add_todo_info">
+       <property name="geometry">
+        <rect>
+         <x>27</x>
+         <y>255</y>
+         <width>252</width>
+         <height>199</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(50, 50, 50, 255);</string>
+       </property>
+       <property name="placeholderText">
+        <string>添加备注</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="close_edit_button">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>0</y>
+         <width>30</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::EditClear"/>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="delete_todo">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>539</y>
+         <width>38</width>
+         <height>37</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/Themes/Assets/delete.svg</normaloff>:/Themes/Assets/delete.svg</iconset>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="chagesize">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>42</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(50, 50, 50, 255);
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/Themes/Assets/smallwindow.svg</normaloff>:/Themes/Assets/smallwindow.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QWidget" name="empty_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>213</x>
+        <y>216</y>
+        <width>250</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(20, 20, 20, 120);
+border-radius:10px</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_14">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>56</x>
+         <y>16</y>
+         <width>148</width>
+         <height>119</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+border-radius:10px</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/Themes/Assets/Illustrations/AllEmpty/DarkAllEmpty.svg</normaloff>
+         <disabledoff>:/Themes/Assets/Illustrations/AllEmpty/DarkAllEmpty.svg</disabledoff>:/Themes/Assets/Illustrations/AllEmpty/DarkAllEmpty.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>110</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>63</x>
+         <y>129</y>
+         <width>130</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string>专注于你的一天</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>164</y>
+         <width>227</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string>使用“我的一天”创建待办，这是一个每天
+都会刷新的列表。</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <zorder>chagesize</zorder>
+     <zorder>MydayLabel</zorder>
+     <zorder>MydayDateLabel</zorder>
+     <zorder>TodoList</zorder>
+     <zorder>addtodo</zorder>
+     <zorder>TododatesetButton</zorder>
+     <zorder>TodotimesetButton</zorder>
+     <zorder>TodorepeatButton</zorder>
+     <zorder>infolabel</zorder>
+     <zorder>repeatinfolabel</zorder>
+     <zorder>edit_widget</zorder>
+     <zorder>empty_widget</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tomato_clock_widget">
+    <widget class="QWidget" name="tomato_clock_background" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>671</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#tomato_clock_background
+{
+image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);
+
+}</string>
+     </property>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>139</x>
+        <y>31</y>
+        <width>430</width>
+        <height>576</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(62, 62, 62,200);
+border: 2px solid #555;
+ border-radius: 10px;</string>
+      </property>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>147</x>
+         <y>16</y>
+         <width>141</width>
+         <height>33</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>20</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+background-color: transparent;
+</string>
+       </property>
+       <property name="text">
+        <string>番茄工作法</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>54</y>
+         <width>105</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+background-color: transparent;
+color: rgb(115, 115, 115);</string>
+       </property>
+       <property name="text">
+        <string>第12个番茄钟</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>27</x>
+         <y>85</y>
+         <width>376</width>
+         <height>56</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>13</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+background-color: rgba(79, 2, 20,50);
+color: rgb(227, 79, 99);
+
+</string>
+       </property>
+       <property name="text">
+        <string>工作时间</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="LinearProgressBar" name="now_progres_line" native="true">
+       <property name="geometry">
+        <rect>
+         <x>27</x>
+         <y>155</y>
+         <width>376</width>
+         <height>12</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> border-radius: 10px;</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>27</x>
+         <y>179</y>
+         <width>376</width>
+         <height>145</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;
+border: 2px dashed #555;
+ border-radius: 10px;</string>
+       </property>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>89</x>
+          <y>39</y>
+          <width>206</width>
+          <height>63</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>40</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+border: none;
+ border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string>00:00</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QSpinBox" name="study_time_set">
+       <property name="geometry">
+        <rect>
+         <x>107</x>
+         <y>345</y>
+         <width>100</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSpinBox {
+        border: 2px solid rgb(79, 79, 79);
+        border-radius: 6px;
+        padding: 2px 8px;
+
+        color: white;
+        font-size: 14px;
+    }
+
+    QSpinBox::up-button, QSpinBox::down-button {
+        width: 16px;
+        height: 12px;
+        border: none;
+        background-color: transparent;
+    }
+
+    QSpinBox::up-button {
+        subcontrol-origin: border;
+        subcontrol-position: top right;
+      
+        margin: 3px;
+    }
+
+    QSpinBox::down-button {
+        subcontrol-origin: border;
+        subcontrol-position: bottom right;
+        margin: 3px;
+    }
+
+    QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+        background-color: rgb(117, 117, 117);
+    }
+
+    QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {
+        background-color:rgb(72, 72, 72);
+    }
+
+    QSpinBox::disabled {
+        background-color: #eee;
+        color: #999;
+    }</string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="stepType">
+        <enum>QAbstractSpinBox::StepType::DefaultStepType</enum>
+       </property>
+       <property name="value">
+        <number>25</number>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="rest_time_set">
+       <property name="geometry">
+        <rect>
+         <x>224</x>
+         <y>345</y>
+         <width>100</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSpinBox {
+        border: 2px solid rgb(79, 79, 79);
+        border-radius: 6px;
+        padding: 2px 8px;
+
+        color: white;
+        font-size: 14px;
+    }
+
+    QSpinBox::up-button, QSpinBox::down-button {
+        width: 16px;
+        height: 12px;
+        border: none;
+        background-color: transparent;
+    }
+
+    QSpinBox::up-button {
+        subcontrol-origin: border;
+        subcontrol-position: top right;
+      
+        margin: 3px;
+    }
+
+    QSpinBox::down-button {
+        subcontrol-origin: border;
+        subcontrol-position: bottom right;
+        margin: 3px;
+    }
+
+    QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+        background-color: rgb(117, 117, 117);
+    }
+
+    QSpinBox::up-button:pressed, QSpinBox::down-button:pressed {
+        background-color:rgb(72, 72, 72);
+    }
+
+    QSpinBox::disabled {
+        background-color: #eee;
+        color: #999;
+    }</string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="stepType">
+        <enum>QAbstractSpinBox::StepType::DefaultStepType</enum>
+       </property>
+       <property name="value">
+        <number>5</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>111</x>
+         <y>375</y>
+         <width>101</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+background-color: transparent;
+</string>
+       </property>
+       <property name="text">
+        <string>工作时间（分钟）</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>375</y>
+         <width>100</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+background-color: transparent;
+</string>
+       </property>
+       <property name="text">
+        <string>休息时间（分钟）</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="tomato_clock_start_button">
+       <property name="geometry">
+        <rect>
+         <x>175</x>
+         <y>422</y>
+         <width>80</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>13</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: rgba(255, 70, 8,50);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+QPushButton:hover {
+    background-color: rgba(255, 90, 28,50);  /* 悬停时更亮些 */
+}
+
+QPushButton:pressed {
+    background-color: rgba(200, 50, 0,50);   /* 按下更暗，突出反馈 */
+}
+
+QPushButton:disabled {
+    background-color: rgb(180, 180, 180);
+    color: rgb(120, 120, 120);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>开始</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="tomato_clock_reset_button">
+       <property name="geometry">
+        <rect>
+         <x>145</x>
+         <y>422</y>
+         <width>120</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>13</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: rgba(163, 38, 27,50);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+
+}
+
+QPushButton:hover {
+    background-color: rgba(183, 48, 37,50);  /* 稍亮一点 */
+}
+
+QPushButton:pressed {
+    background-color: rgba(133, 28, 17,50);  /* 稍暗一点，表示按下 */
+}
+
+QPushButton:disabled {
+    background-color: rgb(120, 120, 120);
+    color: rgb(200, 200, 200);
+}</string>
+       </property>
+       <property name="text">
+        <string>重置</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/Themes/Assets/reset.svg</normaloff>:/Themes/Assets/reset.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="small_tomato_clock_button">
+       <property name="geometry">
+        <rect>
+         <x>285</x>
+         <y>422</y>
+         <width>105</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>13</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: rgba(126, 8, 120,50);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+
+
+}
+
+QPushButton:hover {
+    background-color: rgba(146, 28, 140,50);  /* 稍亮：悬停 */
+}
+
+QPushButton:pressed {
+    background-color: rgba(96, 0, 90,50);     /* 更暗：按下 */
+}
+
+QPushButton:disabled {
+    background-color: rgb(90, 90, 90);
+    color: rgb(180, 180, 180);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>小窗口</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/Themes/Assets/goto_small.svg</normaloff>:/Themes/Assets/goto_small.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>55</x>
+         <y>490</y>
+         <width>325</width>
+         <height>43</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+background-color: transparent;
+</string>
+       </property>
+       <property name="text">
+        <string>自动循环：工作时间结束后会自动进入休息时间，
+休息时间结束后自动进入下一个工作周期</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="tomato_clock_stop_button">
+       <property name="geometry">
+        <rect>
+         <x>45</x>
+         <y>422</y>
+         <width>80</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>13</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: rgba(255, 130, 8,50);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+QPushButton:hover {
+    background-color: rgba(255, 130, 28,50);  /* 悬停时更亮些 */
+}
+
+QPushButton:pressed {
+    background-color: rgba(200, 50, 0,50);   /* 按下更暗，突出反馈 */
+}
+
+QPushButton:disabled {
+    background-color: rgb(180, 180, 180);
+    color: rgb(120, 120, 120);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>暂停</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="deepseek_page">
+    <widget class="QWidget" name="deepseek_background" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1001</width>
+       <height>671</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#deepseek_background
+{
+image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);
+
+}</string>
+     </property>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>83</y>
+        <width>645</width>
+        <height>506</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(40,40,40,100);</string>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::TabShape::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>获取你的每日工作建议</string>
+       </attribute>
+       <widget class="QTextBrowser" name="everyday_segestion_box">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>651</width>
+          <height>415</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(50, 50, 50, 50);
+border:none;
+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_15">
+        <property name="geometry">
+         <rect>
+          <x>533</x>
+          <y>435</y>
+          <width>98</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>重新生成</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/Themes/Assets/reset.svg</normaloff>:/Themes/Assets/reset.svg</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>与DeepSeek深入交流</string>
+       </attribute>
+       <widget class="QTextBrowser" name="chat_result">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>19</y>
+          <width>640</width>
+          <height>374</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(50, 50, 50, 50);
+border:none;
+</string>
+        </property>
+        <property name="cursorWidth">
+         <number>3</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="input_question">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>429</y>
+          <width>629</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+            background-color: rgba(0, 0, 0, 180);
+ border-radius: 10px;
+        }
+QLineEdit:focus {
+            background-color: rgba(50, 50,50, 180);
+        }
+QLineEdit:!focus:!hover {
+             background-color: rgba(20, 20, 20, 128);
+			color: white
+
+        }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="placeholderText">
+         <string>开始对话</string>
+        </property>
+        <property name="cursorMoveStyle">
+         <enum>Qt::CursorMoveStyle::LogicalMoveStyle</enum>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="MydayLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>29</y>
+        <width>312</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>22</pointsize>
+        <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent</string>
+      </property>
+      <property name="text">
+       <string>你的智能工作助手</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::PlainText</enum>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="weather_icon">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>35</y>
+     <width>72</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>50</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="city_name">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>120</y>
+     <width>66</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LinearProgressBar</class>
+   <extends>QWidget</extends>
+   <header>linearprogressbar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

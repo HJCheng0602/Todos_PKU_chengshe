@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Search / Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="69.8743142%" cy="46.07175%" fx="69.8743142%" fy="46.07175%" r="49.6565%" gradientTransform="translate(0.698743,0.460717),scale(0.997506,1.000000),translate(-0.698743,-0.460717)" id="radialGradient-1">
+            <stop stop-color="#5C6FB2" offset="0%"></stop>
+            <stop stop-color="#7988C3" offset="92.35%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Search-/-Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#E1DFDD" fill-rule="nonzero" cx="21.5" cy="22" r="17.4"></circle>
+        <circle id="Oval" fill="#C6E6EC" fill-rule="nonzero" cx="58.3" cy="57.9" r="35.4"></circle>
+        <path d="M24.5,47.5 C26.7,48.6 29.2,49.2 31.9,49.2 C41.5,49.2 49.3,41.4 49.3,31.8 C49.3,29.1 48.7,26.5 47.6,24.3 C36.6,27.7 27.9,36.5 24.5,47.5 Z" id="Path" fill="#85CEE3" fill-rule="nonzero"></path>
+        <circle id="Oval" cx="58.3" cy="57.9" r="35.4"></circle>
+        <path d="M97,35.2 C84.1,14 56.4,7.2 35.2,20 C14,32.8 7.1,60.5 20,81.8 C32.9,103.1 60.5,109.9 81.8,97 C103,84.2 109.8,56.5 97,35.2 Z M74.9,85.7 C59.9,94.8 40.4,89.9 31.3,75 C27,67.9 25.8,59.8 27.4,52.3 C29,43.9 34.1,36.2 42,31.4 C57,22.3 76.5,27.1 85.6,42.1 C90.4,50 91.3,59.2 88.9,67.4 C86.8,74.8 82,81.4 74.9,85.7 Z" id="Shape" fill="#7988C3" fill-rule="nonzero"></path>
+        <polygon id="Path" fill="url(#radialGradient-1)" fill-rule="nonzero" points="109.9 118.4 78.5 87.2 87.2 78.4 118.6 109.6"></polygon>
+        <path d="M123.1,134.4 L95.5,107 L107.2,95.2 L134.8,122.6 C138.1,125.8 138.1,131.1 134.8,134.4 L134.8,134.4 C131.6,137.7 126.3,137.7 123.1,134.4 Z" id="Path" fill="#7988C3" fill-rule="nonzero"></path>
+        <rect id="Rectangle" fill="#5C6FB2" fill-rule="nonzero" transform="translate(93.487380, 93.268680) rotate(-45.000000) translate(-93.487380, -93.268680) " x="87.2874395" y="92.2686896" width="12.3998811" height="1.99998082"></rect>
+        <rect id="Rectangle" fill="#5C6FB2" fill-rule="nonzero" transform="translate(97.169120, 97.012780) rotate(-45.000000) translate(-97.169120, -97.012780) " x="90.9691795" y="96.0127896" width="12.3998811" height="1.99998082"></rect>
+        <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="74.7" cy="46.6" r="5.4"></circle>
+        <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="81.3" cy="59.5" r="3.8"></circle>
+        <circle id="Oval" fill="#E1DFDD" fill-rule="nonzero" cx="129.9" cy="22.6" r="14.2"></circle>
+        <circle id="Oval" fill="#E1DFDD" fill-rule="nonzero" cx="31.5" cy="131.2" r="14.2"></circle>
+        <circle id="Oval" fill="#E1DFDD" fill-rule="nonzero" cx="18.5" cy="118.2" r="11.2"></circle>
+        <path d="M17.4,129.3 C17.8,129.3 18.1,129.4 18.5,129.4 C24.7,129.4 29.7,124.4 29.7,118.2 C29.7,117.8 29.7,117.5 29.6,117.1 C23.3,118 18.3,123 17.4,129.3 Z" id="Path" fill="#C9C6C5" fill-rule="nonzero"></path>
+    </g>
+</svg>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>choosetime_style_widget</class>
+ <widget class="QWidget" name="choosetime_style_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>230</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="saveButton">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>200</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #00CED1; /* 按钮背景颜色为蓝绿色 */
+    color: white; /* 按钮文字颜色为白色 */
+    border: none; /* 无边框 */
+    padding: 5px 5px; /* 内边距 */
+    font-size: 13px; /* 字体大小 */
+    border-radius: 5px; /* 圆角 */
+}
+
+QPushButton:hover {
+    background-color: #00B2B2; /* 鼠标悬停时背景颜色变深 */
+}
+
+QPushButton:pressed {
+    background-color: #008C8C; /* 鼠标按下时背景颜色更深 */
+}</string>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_51">
+   <property name="geometry">
+    <rect>
+     <x>121</x>
+     <y>200</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+
+    background-color: transparent;
+    padding: 5px 5px; /* 内边距 */
+    font-size: 13px; /* 字体大小 */
+    border-radius: 5px; /* 圆角 */
+}
+
+QPushButton:hover {
+    background-color: rgba(0,0, 0, 220);
+}
+
+QPushButton:pressed {
+    background-color:  rgba(0, 0, 0,220);
+}</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

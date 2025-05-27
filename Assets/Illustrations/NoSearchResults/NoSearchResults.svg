@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Search / Search No Results</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="69.8743142%" cy="46.07175%" fx="69.8743142%" fy="46.07175%" r="49.6565%" gradientTransform="translate(0.698743,0.460717),scale(0.997506,1.000000),translate(-0.698743,-0.460717)" id="radialGradient-1">
+            <stop stop-color="#5C6FB2" offset="0%"></stop>
+            <stop stop-color="#7988C3" offset="92.35%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Search-/-Search-No-Results" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#E1DFDD" fill-rule="nonzero" cx="21.5" cy="22" r="17.4"></circle>
+        <circle id="Oval" fill="#C6E6EC" fill-rule="nonzero" cx="58.3" cy="57.9" r="35.4"></circle>
+        <path d="M24.5,47.5 C26.7,48.6 29.2,49.2 31.9,49.2 C41.5,49.2 49.3,41.4 49.3,31.8 C49.3,29.1 48.7,26.5 47.6,24.3 C36.6,27.7 27.9,36.5 24.5,47.5 Z" id="Path" fill="#85CEE3" fill-rule="nonzero"></path>
+        <circle id="Oval" cx="58.3" cy="57.9" r="35.4"></circle>
+        <path d="M35.2,20 C56.4,7.2 84.1,14 97,35.2 C109.8,56.5 103,84.2 81.8,97 C73.859987,101.80874 65.0445393,103.88001 56.4414445,103.483166 C52.0367121,93.7968014 42.2756953,87.0625 30.9424297,87.0625 C28.6775413,87.0625 26.4754617,87.331409 24.3663751,87.8390381 C22.7738863,85.9796739 21.3110275,83.9647198 20,81.8 C7.1,60.5 14,32.8 35.2,20 Z M85.6,42.1 C76.5,27.1 57,22.3 42,31.4 C34.1,36.2 29,43.9 27.4,52.3 C25.8,59.8 27,67.9 31.3,75 C40.4,89.9 59.9,94.8 74.9,85.7 C82,81.4 86.8,74.8 88.9,67.4 C91.3,59.2 90.4,50 85.6,42.1 Z" id="Combined-Shape" fill="#7988C3" fill-rule="nonzero"></path>
+        <polygon id="Path" fill="url(#radialGradient-1)" fill-rule="nonzero" points="109.9 118.4 78.5 87.2 87.2 78.4 118.6 109.6"></polygon>
+        <path d="M123.1,134.4 L95.5,107 L107.2,95.2 L134.8,122.6 C138.1,125.8 138.1,131.1 134.8,134.4 L134.8,134.4 C131.6,137.7 126.3,137.7 123.1,134.4 Z" id="Path" fill="#7988C3" fill-rule="nonzero"></path>
+        <rect id="Rectangle" fill="#5C6FB2" fill-rule="nonzero" transform="translate(93.487380, 93.268680) rotate(-45.000000) translate(-93.487380, -93.268680) " x="87.2874395" y="92.2686896" width="12.3998811" height="1.99998082"></rect>
+        <rect id="Rectangle" fill="#5C6FB2" fill-rule="nonzero" transform="translate(97.169120, 97.012780) rotate(-45.000000) translate(-97.169120, -97.012780) " x="90.9691795" y="96.0127896" width="12.3998811" height="1.99998082"></rect>
+        <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="74.7" cy="46.6" r="5.4"></circle>
+        <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="81.3" cy="59.5" r="3.8"></circle>
+        <circle id="Oval" fill="#E1DFDD" fill-rule="nonzero" cx="129.9" cy="22.6" r="14.2"></circle>
+        <g id="Group-40" transform="translate(3.000000, 88.000000)">
+            <path d="M50.1743,27.0625 C50.1743,39.3415 40.2203,49.2945 27.9423,49.2945 C15.6633,49.2945 5.7093,39.3415 5.7093,27.0625 C5.7093,14.7845 15.6633,4.8305 27.9423,4.8305 C40.2203,4.8305 50.1743,14.7845 50.1743,27.0625" id="Fill-34" fill="#FCD490"></path>
+            <path d="M27.9419,34.998 C26.5609,34.998 25.4419,33.879 25.4419,32.498 L25.4419,27.007 C25.4419,25.627 26.5609,24.507 27.9419,24.507 C29.9939,24.507 31.6639,22.838 31.6639,20.785 L31.6639,20.207 C31.6639,18.155 29.9939,16.485 27.9419,16.485 C25.8899,16.485 24.2199,18.155 24.2199,20.207 C24.2199,21.588 23.1009,22.707 21.7199,22.707 C20.3389,22.707 19.2199,21.588 19.2199,20.207 C19.2199,15.398 23.1329,11.485 27.9419,11.485 C32.7509,11.485 36.6639,15.398 36.6639,20.207 L36.6639,20.785 C36.6639,24.727 34.0369,28.064 30.4419,29.143 L30.4419,32.498 C30.4419,33.879 29.3229,34.998 27.9419,34.998" id="Fill-36" fill="#FEFEFE"></path>
+            <path d="M30.6919,40.8955 C30.6919,42.4145 29.4609,43.6455 27.9419,43.6455 C26.4229,43.6455 25.1919,42.4145 25.1919,40.8955 C25.1919,39.3755 26.4229,38.1455 27.9419,38.1455 C29.4609,38.1455 30.6919,39.3755 30.6919,40.8955" id="Fill-38" fill="#FEFEFE"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>subrepeat</class>
+ <widget class="QWidget" name="subrepeat">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>256</width>
+    <height>157</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="SaveButton">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>108</y>
+     <width>118</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #00CED1; /* 按钮背景颜色为蓝绿色 */
+    color: white; /* 按钮文字颜色为白色 */
+    border: none; /* 无边框 */
+    padding: 5px 5px; /* 内边距 */
+    font-size: 13px; /* 字体大小 */
+    border-radius: 5px; /* 圆角 */
+}
+
+QPushButton:hover {
+    background-color: #00B2B2; /* 鼠标悬停时背景颜色变深 */
+}
+
+QPushButton:pressed {
+    background-color: #008C8C; /* 鼠标按下时背景颜色更深 */
+}</string>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ConcellButton">
+   <property name="geometry">
+    <rect>
+     <x>134</x>
+     <y>109</y>
+     <width>118</width>
+     <height>39</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+
+    color: white; /* 按钮文字颜色为白色 */
+    border: none; /* 无边框 */
+    padding: 5px 5px; /* 内边距 */
+    font-size: 13px; /* 字体大小 */
+    border-radius: 5px; /* 圆角 */
+}
+
+QPushButton:hover {
+    background-color: rgba(150, 150, 150, 128);
+}
+
+QPushButton:pressed {
+    background-color:  rgba(100, 100, 100,128);
+}</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>57</y>
+     <width>74</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;</string>
+   </property>
+   <property name="maxLength">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>101</width>
+     <height>39</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>重复周期...</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>93</x>
+     <y>56</y>
+     <width>156</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    background-color: transparent;
+    padding: 0 10px;
+    min-height: 30px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 35px;
+    border-left: 0px solid #ccc;
+}
+
+QComboBox::down-arrow {
+    image: url(:/Themes/Assets/down.svg);
+    width: 12px;
+    height: 12px;
+    right: 5px;
+}
+
+QComboBox QAbstractItemView {
+                background-color: rgba(50,50,50,200);
+                border: 0px solid #ccc;
+				border-radius: 6px;
+
+            }
+QComboBox::item {
+                padding: 10px;
+				
+            }
+QComboBox QAbstractItemView::item { min-height: 40px;}
+
+</string>
+   </property>
+   <property name="currentText">
+    <string/>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QComboBox::SizeAdjustPolicy::AdjustToMinimumContentsLengthWithIcon</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

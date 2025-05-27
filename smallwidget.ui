@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>smallwidget</class>
+ <widget class="QWidget" name="smallwidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>307</width>
+    <height>388</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="maincontextphoto" native="true">
+   <property name="geometry">
+    <rect>
+     <x>-8</x>
+     <y>-1</y>
+     <width>432</width>
+     <height>393</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#maincontextphoto
+{
+border-image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg) 0 0 0 0 stretch stretch;
+}</string>
+   </property>
+   <widget class="QLineEdit" name="addtodo">
+    <property name="geometry">
+     <rect>
+      <x>26</x>
+      <y>336</y>
+      <width>260</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+            background-color: rgba(0, 0, 0, 180);
+ border-radius: 10px;
+        }
+QLineEdit:focus {
+            background-color: rgba(50, 50,50, 180);
+        }
+QLineEdit:!focus:!hover {
+             background-color: rgba(20, 20, 20, 128);
+			color: white
+
+        }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="placeholderText">
+     <string>添加任务</string>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::CursorMoveStyle::LogicalMoveStyle</enum>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="TodotimesetButton">
+    <property name="geometry">
+     <rect>
+      <x>245</x>
+      <y>335</y>
+      <width>20</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+ border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/Themes/Assets/alarm.svg</normaloff>:/Themes/Assets/alarm.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="TodoList">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>95</y>
+      <width>252</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+    </property>
+    <widget class="QWidget" name="TodoListContent">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>250</width>
+       <height>229</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="MydayLabel">
+    <property name="geometry">
+     <rect>
+      <x>22</x>
+      <y>15</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="text">
+     <string>我的一天</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::TextFormat::PlainText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MydayDateLabel">
+    <property name="geometry">
+     <rect>
+      <x>26</x>
+      <y>60</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="TododatesetButton">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>335</y>
+      <width>20</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+ border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/Themes/Assets/canlendar.svg</normaloff>:/Themes/Assets/canlendar.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>14</width>
+      <height>14</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+    </property>
+    <property name="autoRaise">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="TodorepeatButton">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>335</y>
+      <width>20</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+ border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/Themes/Assets/repeat.svg</normaloff>:/Themes/Assets/repeat.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="popupMode">
+     <enum>QToolButton::ToolButtonPopupMode::InstantPopup</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="infolabel">
+    <property name="geometry">
+     <rect>
+      <x>215</x>
+      <y>335</y>
+      <width>43</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="repeatinfolabel">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>335</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="edit_widget" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>128</x>
+      <y>0</y>
+      <width>196</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::FocusPolicy::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(40, 40, 40, 255);</string>
+    </property>
+    <widget class="QPushButton" name="set_todo_finished">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>32</y>
+       <width>25</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { 
+background-color: rgba(50, 50, 50, 255);
+
+
+                              color: white; /* 文字颜色为白色 */ 
+                              border: none; /* 去掉边框 */ 
+                              border-bottom-left-radius: 10px;
+                              border-top-left-radius: 10px;
+                              icon: url(:/Themes/Assets/circle-large.svg); /* 正常状态图标 */ 
+                              padding-left: 5px;
+text-align: left; /* 文字居左 */ 
+}
+                   
+QPushButton:hover 
+{ 
+                              background-color: rgba(0, 0, 0, 128); /* 悬浮时背景颜色变深 */ 
+                              icon: url(:/Themes/Assets/circle-check.svg); /* 正常状态图标 */ 
+}
+
+
+                            </string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>12</width>
+       <height>12</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_todo_title">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>32</y>
+       <width>110</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(50, 50, 50, 255);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="set_todo_important">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>32</y>
+       <width>25</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(50, 50, 50, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/Themes/Assets/JumpList/dark/Imp_dark_256.png</normaloff>:/Themes/Assets/JumpList/dark/Imp_dark_256.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>73</y>
+       <width>162</width>
+       <height>147</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="reset_todo_time">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(50, 50, 50, 255);
+text-align: left;
+padding: 10px;</string>
+        </property>
+        <property name="text">
+         <string>  提醒我</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/Themes/Assets/alarm.svg</normaloff>:/Themes/Assets/alarm.svg</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="reset_todo_date">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(50, 50, 50, 255);
+text-align: left;
+padding: 10px;</string>
+        </property>
+        <property name="text">
+         <string>  改变截止日期</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/Themes/Assets/canlendar.svg</normaloff>:/Themes/Assets/canlendar.svg</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="reset_todo_repeat">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(50, 50, 50, 255);
+text-align: left;
+padding: 10px;
+</string>
+        </property>
+        <property name="text">
+         <string>  重复</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/Themes/Assets/repeat.svg</normaloff>:/Themes/Assets/repeat.svg</iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QTextEdit" name="add_todo_info">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>228</y>
+       <width>165</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(50, 50, 50, 255);</string>
+     </property>
+     <property name="placeholderText">
+      <string>添加备注</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="close_edit_button">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>0</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset theme="QIcon::ThemeIcon::EditClear"/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_todo">
+     <property name="geometry">
+      <rect>
+       <x>151</x>
+       <y>359</y>
+       <width>33</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/Themes/Assets/delete.svg</normaloff>:/Themes/Assets/delete.svg</iconset>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="chagesize">
+    <property name="geometry">
+     <rect>
+      <x>259</x>
+      <y>14</y>
+      <width>24</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(50, 50, 50, 255);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/Themes/Assets/smallwindow.svg</normaloff>:/Themes/Assets/smallwindow.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>14</width>
+      <height>14</height>
+     </size>
+    </property>
+   </widget>
+   <zorder>chagesize</zorder>
+   <zorder>addtodo</zorder>
+   <zorder>TodotimesetButton</zorder>
+   <zorder>TodoList</zorder>
+   <zorder>MydayLabel</zorder>
+   <zorder>MydayDateLabel</zorder>
+   <zorder>TododatesetButton</zorder>
+   <zorder>TodorepeatButton</zorder>
+   <zorder>infolabel</zorder>
+   <zorder>repeatinfolabel</zorder>
+   <zorder>edit_widget</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

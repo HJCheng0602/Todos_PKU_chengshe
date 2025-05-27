@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>List / Flagged email smartlist (Dark)</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="27.7993869%" fx="50%" fy="27.7993869%" r="87.8095425%" gradientTransform="translate(0.500000,0.277994),scale(0.647011,1.000000),rotate(90.000000),translate(-0.500000,-0.277994)" id="radialGradient-1">
+            <stop stop-color="#605E5B" offset="0%"></stop>
+            <stop stop-color="#797673" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="12.2293205%" y1="35.2956956%" x2="87.7245489%" y2="66.6986662%" id="linearGradient-2">
+            <stop stop-color="#5D6FB4" offset="0%"></stop>
+            <stop stop-color="#6A7CBC" offset="24%"></stop>
+            <stop stop-color="#7586C2" offset="56%"></stop>
+            <stop stop-color="#798AC4" offset="92%"></stop>
+        </linearGradient>
+        <linearGradient x1="57.133779%" y1="2.61028164%" x2="54.4081874%" y2="20.7237818%" id="linearGradient-3">
+            <stop stop-color="#797673" offset="0%"></stop>
+            <stop stop-color="#B3AFAB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="List-/-Flagged-email-smartlist-(Dark)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M16.7374967,59.6738602 L89.7512898,59.6738602 C93.2306837,59.6738602 96.0512898,62.4944663 96.0512898,65.9738602 L96.0512898,108.766964 C96.0512898,112.246358 93.2306837,115.066964 89.7512898,115.066964 L16.7374967,115.066964 C13.2581027,115.066964 10.4374967,112.246358 10.4374967,108.766964 L10.4374967,65.9738602 C10.4374967,62.4944663 13.2581027,59.6738602 16.7374967,59.6738602 Z" id="Rectangle" fill="url(#radialGradient-1)" fill-rule="nonzero" transform="translate(53.244393, 87.370412) rotate(-14.030000) translate(-53.244393, -87.370412) "></path>
+        <path d="M62.1,90.0791603 L89.3,51.7791603 C88.1,51.0791603 86.6,50.7791603 85.1,51.1791603 L11.4,69.5791603 C9.9,69.9791603 8.7,70.8791603 8,72.0791603 L50.8,92.9791603 C54.8,94.8791603 59.5,93.6791603 62.1,90.0791603 Z" id="Path" fill="#797673" fill-rule="nonzero"></path>
+        <path d="M75.0080688,75.2689655 C92.4839308,60.9103448 114.566689,91.9310345 130.870138,82.0275862 L144.10462,42.6758621 C127.808069,52.5793103 105.72531,21.5655172 88.2425515,35.9241379" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+        <path d="M56.0287584,129.993103 C55.6683885,129.993103 55.3102653,129.93632 54.9666895,129.827586 C53.1564774,129.241867 52.1627254,127.300656 52.7459998,125.489655 L85.1184136,24.9724138 C85.4530539,23.7489295 86.4323756,22.8079392 87.6682395,22.5223899 C88.9041034,22.2368407 90.1969605,22.6528389 91.0344065,23.6055099 C91.8718525,24.5581809 92.1186691,25.8937016 91.6770343,27.0827586 L59.3046205,127.6 C58.8470516,129.023605 57.5240886,129.990065 56.0287584,129.993103 L56.0287584,129.993103 Z" id="Path" fill="url(#linearGradient-3)" fill-rule="nonzero"></path>
+        <circle id="Oval" fill="#B3AFAB" fill-rule="nonzero" cx="88.3942757" cy="26.0275862" r="6.02758621"></circle>
+    </g>
+</svg>
