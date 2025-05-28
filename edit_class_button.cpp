@@ -1,6 +1,7 @@
 #include "edit_class_button.h"
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QPushButton>
 #include <QGraphicsDropShadowEffect>
 edit_class_button::edit_class_button(QString id,QWidget *parent)
     : QPushButton{parent}
@@ -175,8 +176,28 @@ edit_class_button::edit_class_button(QString id,QWidget *parent)
 
 
     this->setStyleSheet(styleSheet);
-    this->setText(this->classname);
-    this->setText(this->classname);
+    //this->setText(this->classname);
+    // 假设 this 是 QPushButton 派生类内部
+    text.setText(this->classname);        // 设置文本
+    text.setParent(this);                 // 设置为按钮子控件
+    text.setFixedWidth(50);               // 限定宽度以触发换行
+    text.setWordWrap(true);               // 启用自动换行
+
+    // 居中显示：设置大小并计算居中位置
+    int label_width = text.width();       // 50
+    int label_height = text.sizeHint().height();  // 根据文字自动估计高度
+    int button_width = this->width();
+    int bbutton_height = this->height();
+
+    // 水平和垂直居中移动 label
+    text.move((button_width - label_width) / 2, (bbutton_height - label_height) / 2);
+
+    // 设置样式：透明背景 + 文字颜色
+    text.setStyleSheet("background: transparent; color: white;");
+
+    // 对齐方式：文字内容在 label 内部居中
+    text.setAlignment(Qt::AlignCenter);
+    //this->setWordWrap(true);
 
     connect(this, &QPushButton::clicked, this, &edit_class_button::onMainButtonClicked);
 
@@ -483,7 +504,27 @@ void edit_class_button::redraw()
     // mainButton.setEnabled(true);
 
     this->setStyleSheet(styleSheet);
-    this->setText(this->classname);
+    //this->setText(this->classname);
+    // 假设 this 是 QPushButton 派生类内部
+    text.setText(this->classname);        // 设置文本
+    text.setParent(this);                 // 设置为按钮子控件
+    text.setFixedWidth(50);               // 限定宽度以触发换行
+    text.setWordWrap(true);               // 启用自动换行
+
+    // 居中显示：设置大小并计算居中位置
+    int label_width = text.width();       // 50
+    int label_height = text.sizeHint().height();  // 根据文字自动估计高度
+    int button_width = this->width();
+    int bbutton_height = this->height();
+
+    // 水平和垂直居中移动 label
+    text.move((button_width - label_width) / 2, (bbutton_height - label_height) / 2);
+
+    // 设置样式：透明背景 + 文字颜色
+    text.setStyleSheet("background: transparent; color: white;");
+
+    // 对齐方式：文字内容在 label 内部居中
+    text.setAlignment(Qt::AlignCenter);
     this->setVisible(is_visi);
     this->setEnabled(true);
 

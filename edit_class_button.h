@@ -7,6 +7,7 @@
 #include <QTime>
 #include <QColor>
 #include <QVector>
+#include <QLabel>
 
 class edit_class_button : public QPushButton
 {
@@ -29,6 +30,7 @@ public:
     void saveToFile(QTextStream& O);
     void readFromFile(QTextStream& I);
     QJsonObject toJson() const;
+    QLabel text;
     void fromJson(const QJsonObject& json);
     void print();
     //QPushButton mainButton =QPushButton(this);
