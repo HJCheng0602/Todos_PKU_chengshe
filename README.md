@@ -21,6 +21,10 @@
 -   **卓越的工程鲁棒性与防呆设计：**
     * **防御性编程**：内嵌多层防呆机制，涵盖逻辑校验（如学期起始日期）、边界控制（课表周数导航）、并发编辑规避等。
     * **异步/阻塞处理**：关键耗时操作（Web抓取）采用异步模式，确保UI响应。外部API请求（DeepSeek、天气）实现**请求级阻塞**而非全局阻塞，防止重复请求同时保持UI可用性。
+ 
+## 编译环境
+Qt 6.8.3(MSVC 2022, x86_64) with network, webenginewidgets and core gui network.
+Windows 11 and Mac were tested; Linux was not.
 
 
 ## 功能介绍
