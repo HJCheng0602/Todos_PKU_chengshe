@@ -24,6 +24,7 @@
  
 ## 编译环境
 Qt 6.8.3(MSVC 2022, x86_64) with network, webenginewidgets and core gui network.
+
 Windows 11 and Mac were tested; Linux was not.
 
 
