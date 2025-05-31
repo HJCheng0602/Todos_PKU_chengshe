@@ -55,5 +55,6 @@
         <file>Assets/Illustrations/AllEmpty/AllEmpty.svg</file>
         <file>Assets/Illustrations/AllEmpty/DarkAllEmpty.svg</file>
         <file>Assets/Illustrations/MyDayEmpty/MyDayEmpty.svg</file>
+        <file>Assets/status.svg</file>
     </qresource>
 </RCC>

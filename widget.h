@@ -35,7 +35,20 @@
 #include "tomatoclock.h"
 #include "deepseekclient.h"
 #include <QPair>
+#include <QStackedWidget>
+#include <QPropertyAnimation>
+#include <QEasingCurve>
+#include <QGraphicsOpacityEffect> // 用于透明度动画
+#include <QQueue>
+#include "activitycalendarview.h"
+#include <QSet> // 用于统计唯一日期
 
+// Qt Charts 相关的头文件
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QValueAxis>
+#include <QtCharts/QDateTimeAxis>
+#include <QtCharts/QScatterSeries> // 引入 QScatterSeries
 
 
 QT_BEGIN_NAMESPACE
@@ -45,6 +58,7 @@ class Widget;
 QT_END_NAMESPACE
 
 class smallwidget;
+
 
 class Widget : public QWidget
 {
@@ -67,12 +81,18 @@ public:
     void change_background(int id);
     void updateTime();
     void update_deepseek_suggestion();
+    void handleButtonClicked(QAbstractButton *button);
     static QString getDataPath(QString filename);
     QString DATA_PATH;
     int print_model = 0; //0 : 暗色 , 1 : 亮色
 
     QDate semesterStart = QDate(2025, 2, 17);
 
+    QQueue<fanqie_data> fanqie_data_queue;
+
+
+    QTime fanqie_start;
+    QTime fanqie_end;
 
     QTimer realtime;
     QTime realtime_real = QTime(0, 0, 0);
@@ -86,11 +106,17 @@ public:
     DeepSeekClient temp;
     DeepSeekClient chat;
     QString apiKey;
+    QDateTimeAxis *distributionXAxis;
+    int selected_time = 0;
+
+    void populateSampleFanqieData();
+    void updateStatistics();
 
     QVector<QPair<QString, QString>> chatHistory;
 
     void appendMarkdownToChat(const QString &markdownText);
     int background_ID;
+    void animateToPage(int newIndex);
 private:
     Ui::Widget *ui;
     datecalendar w;
@@ -114,6 +140,27 @@ private:
     int unittype = -1;
 
     TomatoClock *tomatoWidget = nullptr;
+    ActivityCalendarView *calendarView;
+
+    int m_oldPageIndex; // 旧页面索引
+    int m_newPageIndex; // 新页面索引
+    bool m_isAnimating; // 动画状态标志，防止重复触发
+
+    QPropertyAnimation *m_fadeOutAnimation;
+    QPropertyAnimation *m_fadeInAnimation;
+
+
+    QChartView *distributionChartView; // 这是要在 ui->widget_5 里显示的图表视图
+    QChart *distributionChart;       // 图表核心对象
+    QLineSeries *distributionSeries; // 折线序列
+    QScatterSeries *distributionScatterSeries;
+
+    // 设置分布图的函数
+    void setupDistributionChart();
+    // 更新分布图数据的函数
+    void updateDistributionChart();
+
+
 
     // const QString DATA_PATH = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
     //                           + "/todos.json";
@@ -124,6 +171,9 @@ public slots:
     void mark_deleted(const QString &id);
     void open_class_edit_menu(const QString &id);
     void edit_class(int i);
+
+    void onFadeOutFinished();
+    void onFadeInFinished();
 
 
 private slots:
@@ -200,6 +250,8 @@ private slots:
     void on_input_question_returnPressed();
 
 
+
+    void on_TaskButton_3_clicked();
 
 signals:
     void changesizeButtonClicked();

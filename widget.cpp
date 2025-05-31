@@ -31,6 +31,14 @@
 #include "deepseekclient.h"
 #include <QPair>
 #include <QTextDocumentFragment>
+#include <QRandomGenerator>
+#include <QVBoxLayout> // 用于布局
+#include <cmath>       // 用于 qCeil
+
+#include <random>   // 用于 std::mt19937 和 std::uniform_int_distribution
+#include <chrono>   // 用于 std::chrono::high_resolution_clock 作为随机数种子
+#include <algorithm> // 用于 std::sort
+
 
 QString circletype_name[4] = {QString("天"), QString("周"), QString("月"), QString("年")};
 
@@ -246,6 +254,131 @@ Widget::Widget(QWidget *parent)
     QVector<QString> weekDays = { "一", "二", "三", "四", "五", "六","日"};
     ui->MydayDateLabel->setText(ttttoday.toString("MM月dd日") + " 星期" + weekDays[ttttoday.dayOfWeek() - 1]);
 
+    QLayout *widget3Layout = ui->widget_3->layout();
+    if (!widget3Layout) {
+        // 如果 ui->widget_3 还没有布局，就创建一个 QVBoxLayout 并设置给它
+        widget3Layout = new QVBoxLayout(ui->widget_3); // 以 ui->widget_3 为父对象
+        // 移除布局的默认边距，让内容更紧凑地填充 widget_3
+        widget3Layout->setContentsMargins(0, 0, 0, 0);
+        widget3Layout->setSpacing(0); // 移除控件之间的间距
+    }
+
+    // --- 初始化统计标签 (保持不变，但要考虑放在哪里) ---
+    // 如果这些标签也应该在 widget_3 里，你需要把它们也添加到 widget3Layout
+    // 假设你希望统计标签在热力图上方，并且它们都在 widget_3 里面
+    ui->totalTimeLabel->setVisible(false);
+    ui->totalTimeLabel = new QLabel("专注时间/总计\n-", this); // 注意这里的父对象，如果标签也在widget_3里，父对象应该是ui->widget_3
+    ui->totalTimeLabel->setAlignment(Qt::AlignCenter);
+    ui->totalTimeLabel->setVisible(true);
+    ui->totalTimeLabel->setFont(QFont("Arial", 9));
+    ui->totalTimeLabel->setStyleSheet("color: lightGray;");
+    ui->totalTimeLabel->setStyleSheet("color: lightGray;background-color:transparent;");
+
+    ui->todayTimeLabel->setVisible(false);
+    ui->todayTimeLabel = new QLabel("专注时间/今日\n-", this);
+    ui->todayTimeLabel->setAlignment(Qt::AlignCenter);
+    ui->todayTimeLabel->setVisible(true);
+    ui->todayTimeLabel->setFont(QFont("Arial", 9));
+    ui->todayTimeLabel->setStyleSheet("color: lightGray;");
+    ui->todayTimeLabel->setStyleSheet("color: lightGray;background-color:transparent;");
+
+    ui->currentStreakLabel->setVisible(false);
+    ui->currentStreakLabel = new QLabel("连续天数/当前\n-", this);
+    ui->currentStreakLabel->setAlignment(Qt::AlignCenter);
+    ui->currentStreakLabel->setVisible(true);
+    ui->currentStreakLabel->setFont(QFont("Arial", 9));
+    ui->currentStreakLabel->setStyleSheet("color: lightGray;");
+    ui->currentStreakLabel->setStyleSheet("color: lightGray;background-color:transparent;");
+
+    ui->maxStreakLabel->setVisible(false);
+    ui->maxStreakLabel = new QLabel("连续天数/最大\n-", this);
+    ui->maxStreakLabel->setAlignment(Qt::AlignCenter);
+    ui->maxStreakLabel->setVisible(true);
+    ui->maxStreakLabel->setFont(QFont("Arial", 9));
+    ui->maxStreakLabel->setStyleSheet("color: lightGray;");
+    ui->maxStreakLabel->setStyleSheet("color: lightGray;background-color:transparent;");
+
+    // 为统计标签创建一个单独的水平布局
+    QHBoxLayout *statsLayout = new QHBoxLayout();
+
+    statsLayout->setSpacing(30);
+    statsLayout->addStretch();
+    statsLayout->addWidget(ui->totalTimeLabel);
+    statsLayout->addWidget(ui->todayTimeLabel);
+    statsLayout->addWidget(ui->currentStreakLabel);
+    statsLayout->addWidget(ui->maxStreakLabel);
+    statsLayout->addStretch(); // 确保标签靠左对齐
+
+    // --- 初始化日历视图 ---
+    // 将日历视图的父对象设置为 ui->widget_3，并将其添加到 ui->widget_3 的布局中
+    calendarView = new ActivityCalendarView(ui->widget_3); // <--- 父对象改为 ui->widget_3
+    QDate displayStartDate = QDate::currentDate().addMonths(-7).addDays(-25);
+    displayStartDate = QDate(displayStartDate.year(), displayStartDate.month(), 1);
+    QDate displayEndDate = QDate::currentDate();
+    calendarView->setDateRange(displayStartDate, displayEndDate);
+
+    // --- 将统计布局和日历视图添加到 ui->widget_3 的布局中 ---
+    // 假设 widget_3 的布局是一个 QVBoxLayout
+    static_cast<QVBoxLayout*>(widget3Layout)->addLayout(statsLayout); // 添加统计布局
+    static_cast<QVBoxLayout*>(widget3Layout)->addWidget(calendarView); // 添加日历视图
+
+
+
+    // --- 模拟数据填充和更新 ---
+    populateSampleFanqieData();
+    updateStatistics(); // 这个函数现在需要更新那些可能在 widget_3 里面的 QLabel
+    calendarView->setData(fanqie_data_queue);
+
+    // 如果趋势图和分布图不在 ui->widget_3 里，那么它们应该有自己的布局和父容器
+    // 确保它们被正确地添加到你的MainWindow的整体布局中
+    // setupTrendChart();
+    // mainLayout->addWidget(trendChartView); // 这需要在你MainWindow的整体布局中添加
+
+    // setupDistributionChart();
+    // mainLayout->addWidget(distributionChartView); // 同上
+
+    // 如果你的趋势图和分布图是显示在QStackedWidget的某个页面里，
+    // 你需要将它们添加到对应的QStackedWidget页面中。
+
+    QVBoxLayout *widget5Layout = qobject_cast<QVBoxLayout*>(ui->widget_5->layout());
+    if (!widget5Layout) {
+        // 如果 ui->widget_5 还没有布局，就创建一个 QVBoxLayout 并设置给它
+        widget5Layout = new QVBoxLayout(ui->widget_5); // 以 ui->widget_5 为父对象
+        widget5Layout->setContentsMargins(0, 0, 0, 0); // 移除布局的默认边距
+        widget5Layout->setSpacing(0); // 移除子控件间距
+    }
+
+    // 2. **设置编程时间分布图**
+    setupDistributionChart(); // 调用图表设置函数
+
+    // 3. **将 distributionChartView 添加到 ui->widget_5 的布局中**
+    widget5Layout->addWidget(distributionChartView);
+
+
+    // --- 模拟数据填充 (用于测试图表) ---
+    //populateSampleFanqieData();
+
+    // --- 更新图表数据 ---
+    updateDistributionChart();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -256,7 +389,7 @@ Widget::Widget(QWidget *parent)
     colorizeEffect->setColor(Qt::black);
     colorizeEffect->setStrength(0.2);
     ui->maincontextphoto->setGraphicsEffect(colorizeEffect);
-    this->setFixedSize(QSize(1033,614));
+    this->setFixedSize(QSize(960,614));
     ui->TodoList->setStyleSheet("background-color:transparent");
     ui->TododatesetButton->setVisible(false);
     ui->TodotimesetButton->setVisible(false);
@@ -271,6 +404,29 @@ Widget::Widget(QWidget *parent)
     ui->tomato_clock_reset_button->setVisible(false);
     ui->tomato_clock_stop_button->setVisible(false);
     ui->label_8->setText("第" + QString::number(fanqie_num) + "个番茄钟");
+
+
+
+    QButtonGroup * m_buttongroup = new QButtonGroup(this);
+    m_buttongroup->setExclusive(true);
+    ui->MydayButton->setCheckable(true);
+    ui->ClassesButton->setCheckable(true);
+    ui->TaskButton->setCheckable(true);
+    ui->TaskButton_2->setCheckable(true);
+    ui->TaskButton_3->setCheckable(true);
+    ui->settings_button->setCheckable(true);
+
+    m_buttongroup->addButton(ui->MydayButton);
+    m_buttongroup->addButton(ui->ClassesButton);
+    m_buttongroup->addButton(ui->TaskButton);
+    m_buttongroup->addButton(ui->TaskButton_2);
+    m_buttongroup->addButton(ui->settings_button);
+    m_buttongroup->addButton(ui->TaskButton_3);
+
+    connect(m_buttongroup, &QButtonGroup::buttonClicked, this, &Widget::handleButtonClicked);
+
+
+
 
 
 
@@ -410,18 +566,37 @@ Widget::Widget(QWidget *parent)
     //从vector中找到todo并绘制
     draw_todo_buttons_from_vector();
 
+    m_fadeOutAnimation = new QPropertyAnimation(this, "opacity"); // "opacity"属性用于QGraphicsOpacityEffect
+    m_fadeOutAnimation->setDuration(100); // 动画时长，例如300毫秒
+    m_fadeOutAnimation->setStartValue(1.0);
+    m_fadeOutAnimation->setEndValue(0.0);
+    m_fadeOutAnimation->setEasingCurve(QEasingCurve::OutQuad); // 结束时减速
+
+    m_fadeInAnimation = new QPropertyAnimation(this, "opacity");
+    m_fadeInAnimation->setDuration(100);
+    m_fadeInAnimation->setStartValue(0.0);
+    m_fadeInAnimation->setEndValue(1.0);
+    m_fadeInAnimation->setEasingCurve(QEasingCurve::InQuad); // 开始时加速
+
+    // 连接动画结束信号到处理槽
+    connect(m_fadeOutAnimation, &QPropertyAnimation::finished, this, &Widget::onFadeOutFinished);
+    connect(m_fadeInAnimation, &QPropertyAnimation::finished, this, &Widget::onFadeInFinished);
+
+
 
 
 
     connect(ui->MydayButton, &QPushButton::clicked, this, [this]()
             {
-                ui->stackedWidget->setCurrentIndex(3);
+        ui->stackedWidget->setCurrentIndex(3);
+                //animateToPage(3);
             });
     ui->maincontextphoto_2->setWindowOpacity(0.5);
     ui->maincontextphoto_2->setGraphicsEffect(colorizeEffect);
     connect(ui->ClassesButton, &QPushButton::clicked, this, [this]()
             {
-                ui->stackedWidget->setCurrentIndex(1);
+        ui->stackedWidget->setCurrentIndex(1);
+                //animateToPage(1);
             });
     connect(ui->TaskButton, &QPushButton::clicked, this, &Widget::showTomatoClock);
 
@@ -1295,8 +1470,8 @@ void Widget::on_add_class_from_web_clicked()
 
 void Widget::showTomatoClock()
 {
-
     ui->stackedWidget->setCurrentIndex(4);
+    //animateToPage(4);
 }
 
 void Widget::handleTomatoClockClosed()
@@ -1451,6 +1626,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 4)
     {
@@ -1484,6 +1664,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/desert/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/desert/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 3)
     {
@@ -1517,6 +1702,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/field/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/field/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 0)
     {
@@ -1550,6 +1740,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/fern/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/fern/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 1)
     {
@@ -1583,6 +1778,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/gradient/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/gradient/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 5)
     {
@@ -1616,6 +1816,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/lighthouse/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/lighthouse/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 6)
     {
@@ -1649,6 +1854,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/safari/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/safari/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 7)
     {
@@ -1682,6 +1892,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/sea/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/sea/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 8)
     {
@@ -1715,6 +1930,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/tv_tower/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/tv_tower/2560x1600.jpg);"
+
+                                              "}");
     }
     else if(id == 9)
     {
@@ -1748,6 +1968,11 @@ void Widget::change_background(int id)
                                                    "image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);"
 
                                                "}");
+        ui->status_context_photo->setStyleSheet("QWidget#status_context_photo"
+                                              "{"
+                                                  "image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);"
+
+                                              "}");
     }
 
     emit change_photo_clicked(id);
@@ -1945,6 +2170,8 @@ void Widget::on_tomato_clock_start_button_clicked()
 
     ui->study_time_set->setEnabled(false);
     ui->rest_time_set->setEnabled(false);
+
+    fanqie_start = QTime::currentTime();
 }
 
 
@@ -2013,7 +2240,14 @@ void Widget::on_small_tomato_clock_button_clicked()
 void Widget::on_tomato_clock_reset_button_clicked()
 {
     realtime.stop();
+
+    selected_time += realtime_real.minute() + (work_time * (fanqie_num - 1));
+    qDebug() << "累计时间" << selected_time;
+
     realtime_real.setHMS(0, 0, 0);
+
+    fanqie_num = 1;
+    ui->label_8->setText("第" + QString::number(fanqie_num) + "个番茄钟");
     ui->label_20->setText(realtime_real.toString("mm:ss"));
     ui->tomato_clock_start_button->setVisible(true);
     ui->tomato_clock_stop_button->setVisible(false);
@@ -2037,6 +2271,68 @@ void Widget::on_tomato_clock_reset_button_clicked()
     ui->pushButton->setText("工作时间");
     ui->study_time_set->setEnabled(true);
     ui->rest_time_set->setEnabled(true);
+
+
+    fanqie_end = QTime::currentTime();
+    fanqie_data currentDayData;
+    if(fanqie_data_queue.isEmpty() || fanqie_data_queue.first().date != QDate::currentDate())
+    {
+        // 如果队列为空或第一个不是今天，则创建今天的新数据项
+        currentDayData.date = QDate::currentDate();
+        currentDayData.total_minute = selected_time;
+        currentDayData.fanqie_slots_paired.append(QPair<QTime, QTime>(fanqie_start, fanqie_end));
+
+        // 因为 queue 可能包含历史数据，所以这里需要将其插入到正确的位置
+        // 最简单的方法是重新构建整个 queue，或者更直接地，
+        // 找到今天的数据项并更新它，如果没有则添加。
+        // 由于 updateStatistics 和 updateDistributionChart 会遍历整个 queue，
+        // 我们可以直接在 queue 中修改它。
+
+        // 查找或创建今天的数据项
+        bool foundToday = false;
+        for (int i = 0; i < fanqie_data_queue.size(); ++i) {
+            if (fanqie_data_queue[i].date == QDate::currentDate()) {
+                fanqie_data_queue[i].fanqie_slots_paired.append(QPair<QTime, QTime>(fanqie_start, fanqie_end));
+                fanqie_data_queue[i].total_minute += selected_time;
+                foundToday = true;
+                break;
+            }
+        }
+        if (!foundToday) {
+            // 如果没找到今天的数据，就把它添加到队列中
+            // 添加到队尾，然后整个队列会重新排序
+            fanqie_data tempToday;
+            tempToday.date = QDate::currentDate();
+            tempToday.total_minute = selected_time;
+            tempToday.fanqie_slots_paired.append(QPair<QTime, QTime>(fanqie_start, fanqie_end));
+            fanqie_data_queue.enqueue(tempToday);
+        }
+
+    }
+    else {
+        // 队列不为空且第一个元素是今天的数据，直接更新它
+        fanqie_data_queue.first().fanqie_slots_paired.append(QPair<QTime, QTime>(fanqie_start, fanqie_end));
+        fanqie_data_queue.first().total_minute += selected_time;
+    }
+
+    // 在更新数据后，重新排序队列 (这是必要的，因为你可能在中间插入了今天的数据)
+    QList<fanqie_data> tempList = fanqie_data_queue.toList();
+    std::sort(tempList.begin(), tempList.end(), [](const fanqie_data& a, const fanqie_data& b){
+        return a.date < b.date; // 始终按日期升序排序
+    });
+    fanqie_data_queue.clear();
+    for (const auto& d : tempList) {
+        fanqie_data_queue.enqueue(d);
+    }
+
+    selected_time = 0;
+
+    updateStatistics();
+    updateDistributionChart();
+    // --- 关键：通知热力图更新数据 ---
+    calendarView->setData(fanqie_data_queue);
+
+
 }
 
 
@@ -2055,34 +2351,18 @@ void Widget::on_pushButton_15_clicked()
 
 void Widget::on_clear_temp_cache_clicked()
 {
-    // created_class_buttons->clear();
-    // created_small_buttons->clear();
-    // created_large_buttons->clear();
 }
 
 
 void Widget::on_TaskButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+    //animateToPage(5);
 }
 
 void  Widget::update_deepseek_suggestion()
 {
-    // struct a_class
-    // {
-    //     QVector<bool>weekinfo;
-    //     QString classname;
-    //     QString classinfo;
-    //     QString classid;
-    //     QColor thecolor;
-    //     int which_weekday = 1;
-    //     bool use_precise_time = false;
-    //     QTime begintime;
-    //     QTime endtime;
-    //     int beginclass = 1;
-    //     int endclass = 1;
-    // };
-    // 获取当前日期
+
     QDate currentDate = QDate::currentDate();
 
     // 获取当前日期是周几（Qt: Monday=1, Sunday=7）
@@ -2118,19 +2398,7 @@ void  Widget::update_deepseek_suggestion()
         }
     }
 
-    // struct a_todo
-    // {
-    //     QString title;
-    //     QString info;
-    //     QString id;
-    //     QDate deadline;
-    //     QTime deadtime;
-    //     QString cycleline;
-    //     bool is_have_deadline = false;
-    //     bool is_have_deadtime = false;
-    //     bool is_have_cycle = false;
-    //     bool is_have_info = false;
-    // };
+
 
     QVector<a_todo> today_todo;
     for(int i = 0; i < created_large_buttons->size(); i++)
@@ -2271,4 +2539,352 @@ void Widget::appendMarkdownToChat(const QString &markdownText)
     cursor.insertFragment(fragment);
 }
 
+void Widget::handleButtonClicked(QAbstractButton *button)
+{
 
+}
+
+
+void Widget::animateToPage(int newIndex)
+{
+    // 如果动画正在进行，或者目标页面已经是当前页面，则不处理
+    if (m_isAnimating || newIndex == ui->stackedWidget->currentIndex()) {
+        return;
+    }
+
+    m_isAnimating = true; // 设置动画进行中标志
+    m_oldPageIndex = ui->stackedWidget->currentIndex(); // 记录旧页面索引
+    m_newPageIndex = newIndex; // 记录新页面索引
+
+    QWidget *oldPage = ui->stackedWidget->widget(m_oldPageIndex);
+    QWidget *newPage = ui->stackedWidget->widget(m_newPageIndex);
+
+    // 1. 为旧页面应用透明度效果并启动淡出动画
+    QGraphicsOpacityEffect *oldEffect = new QGraphicsOpacityEffect(oldPage);
+    oldPage->setGraphicsEffect(oldEffect);
+    oldEffect->setOpacity(1.0); // 确保效果初始透明度是1
+    m_fadeOutAnimation->setTargetObject(oldEffect); // 设置动画的目标是旧页面的QGraphicsOpacityEffect
+    m_fadeOutAnimation->start();
+
+    // 2. 预设新页面为透明，并确保它可见 (但因为透明所以看不见)
+    QGraphicsOpacityEffect *newEffect = new QGraphicsOpacityEffect(newPage);
+    newPage->setGraphicsEffect(newEffect);
+    newEffect->setOpacity(0.0); // 新页面初始完全透明
+    newPage->setVisible(true);
+
+}
+
+void Widget::onFadeOutFinished()
+{
+    QWidget *oldPage = ui->stackedWidget->widget(m_oldPageIndex);
+
+    // 1. 旧页面淡出后，将其隐藏并移除效果，避免资源浪费
+    oldPage->setVisible(false);
+    if (oldPage->graphicsEffect()) {
+        oldPage->graphicsEffect()->deleteLater(); // 删除效果对象
+        oldPage->setGraphicsEffect(nullptr); // 移除效果
+    }
+
+    // 2. 立即切换到新页面 (此时新页面还是透明的，所以用户看不到闪烁)
+    ui->stackedWidget->setCurrentIndex(m_newPageIndex);
+
+    // 3. 启动新页面的淡入动画
+    QWidget *newPage = ui->stackedWidget->widget(m_newPageIndex);
+    QGraphicsOpacityEffect *newEffect = static_cast<QGraphicsOpacityEffect*>(newPage->graphicsEffect());
+    // 重新设置新页面的目标对象，以防它是第一次被动画
+    if (!newEffect) { // 如果某种情况newEffect被移除了，重新创建
+        newEffect = new QGraphicsOpacityEffect(newPage);
+        newPage->setGraphicsEffect(newEffect);
+        newEffect->setOpacity(0.0);
+    }
+    m_fadeInAnimation->setTargetObject(newEffect);
+    m_fadeInAnimation->start();
+}
+
+void Widget::onFadeInFinished()
+{
+    QWidget *newPage = ui->stackedWidget->widget(m_newPageIndex);
+
+    // 新页面淡入后，移除效果，避免性能影响
+    if (newPage->graphicsEffect()) {
+        newPage->graphicsEffect()->deleteLater(); // 删除效果对象
+        newPage->setGraphicsEffect(nullptr); // 移除效果
+    }
+
+    m_isAnimating = false; // 动画完成
+    qDebug() << "Animation finished. Current page index:" << ui->stackedWidget->currentIndex();
+}
+
+void Widget::on_TaskButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+
+void Widget::populateSampleFanqieData() {
+
+    std::mt19937_64 gen(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+
+    // 2. 创建分布器
+    std::uniform_int_distribution<> totalMinuteDist(0, 240); // 0-240分钟
+    std::uniform_int_distribution<> numSlotsDist(0, 4);      // 0-4个番茄钟时段
+    std::uniform_int_distribution<> startHourDist(8, 21);    // 8点到21点之间
+    std::uniform_int_distribution<> startMinuteDist(0, 59);  // 0-59分钟
+    std::uniform_int_distribution<> durationDist(15, 44);    // 15到44分钟
+
+
+    QDate currentDate = QDate::currentDate();
+    // 模拟最近 30 天的数据
+    for (int i = 0; i < 240; ++i) {
+        QDate date = currentDate.addDays(-i);
+        fanqie_data data;
+        data.date = date;
+        data.total_minute = 0; // 默认当天没有活动
+
+        // 随机生成一些番茄钟时段，模拟活动
+        // int numSlots = numSlotsDist(gen); // 使用生成器获取随机数
+        // for (int j = 0; j < numSlots; ++j) {
+        //     int startHour = startHourDist(gen);
+        //     int startMinute = startMinuteDist(gen);
+        //     QTime startTime(startHour, startMinute);
+
+        //     int durationMinutes = durationDist(gen);
+        //     QTime endTime = startTime.addSecs(durationMinutes * 60);
+
+        //     data.fanqie_slots_paired.append(qMakePair(startTime, endTime));
+        //     data.total_minute += durationMinutes;
+        // }
+         fanqie_data_queue.enqueue(data);
+    }
+
+    QList<fanqie_data> tempList = fanqie_data_queue.toList();
+    std::sort(tempList.begin(), tempList.end(), [](const fanqie_data& a, const fanqie_data& b){
+        return a.date < b.date;
+    });
+    // 清空原队列并重新填充，或者直接使用 tempList 在 update 函数中
+    fanqie_data_queue.clear();
+    for (const auto& d : tempList) {
+        fanqie_data_queue.enqueue(d);
+    }
+}
+
+
+
+void Widget::updateStatistics() {
+    int totalMinutes = 0;
+    int todayMinutes = 0;
+    int currentStreak = 0;
+    int maxStreak = 0;
+    int tempCurrentStreakForMax = 0; // 用于计算最大连续天数
+
+    // 转换为列表并按日期降序排序 (从最新到最旧)
+    QList<fanqie_data> sortedData = fanqie_data_queue.toList();
+    std::sort(sortedData.begin(), sortedData.end(), [](const fanqie_data& a, const fanqie_data& b){
+        return a.date > b.date;
+    });
+
+    // --- 1. 计算总时间 和 今日时间 ---
+    if (!sortedData.isEmpty()) {
+        for (const auto& data : sortedData) {
+            totalMinutes += data.total_minute;
+            if (data.date == QDate::currentDate()) {
+                todayMinutes = data.total_minute;
+            }
+        }
+    }
+
+    // --- 2. 计算当前连续天数 (currentStreak) ---
+    // 从今天开始往前看，如果今天有活动，currentStreak才可能大于0
+    if (todayMinutes > 0) {
+        currentStreak = 0; // 临时计数
+        QDate checkDate = QDate::currentDate();
+        // 遍历所有数据，直到找到一个没有活动的日子，或者数据耗尽
+        while (true) {
+            bool foundActivityForDate = false;
+            for (const auto& data : sortedData) { // 每次都要遍历 sortedData
+                if (data.date == checkDate) {
+                    if (data.total_minute > 0) {
+                        currentStreak++; // 这天有活动，连续天数加1
+                        foundActivityForDate = true;
+                        break; // 找到当前日期的数据，跳出内层循环
+                    } else { // 找到当天数据，但没有活动
+                        foundActivityForDate = true; // 标记找到了，但没有活动
+                        break;
+                    }
+                }
+            }
+            if (!foundActivityForDate) { // 如果在数据中没找到 checkDate，或者找到了但没活动
+                break; // 连续中断
+            }
+            checkDate = checkDate.addDays(-1); // 检查前一天
+        }
+    } else {
+        currentStreak = 0; // 今天没有活动，当前连续天数当然是0
+    }
+
+
+    // --- 3. 计算最大连续天数 (maxStreak) ---
+    QDate lastCheckedDateForMaxStreak; // 用于跟踪最大连续天数的日期
+    for (const auto& data : sortedData) {
+        if (data.total_minute > 0) { // 如果当天有活动
+            if (!lastCheckedDateForMaxStreak.isValid()) { // 如果是第一个活跃日期
+                tempCurrentStreakForMax = 1;
+                lastCheckedDateForMaxStreak = data.date;
+            } else if (lastCheckedDateForMaxStreak.daysTo(data.date) == -1) { // 如果是前一天
+                tempCurrentStreakForMax++;
+                lastCheckedDateForMaxStreak = data.date;
+            } else { // 连续中断
+                maxStreak = qMax(maxStreak, tempCurrentStreakForMax);
+                tempCurrentStreakForMax = 1; // 重新开始计算新的连续天数
+                lastCheckedDateForMaxStreak = data.date;
+            }
+        } else { // 如果当天没有活动
+            maxStreak = qMax(maxStreak, tempCurrentStreakForMax); // 更新最大连续天数
+            tempCurrentStreakForMax = 0; // 重置
+        }
+    }
+    maxStreak = qMax(maxStreak, tempCurrentStreakForMax); // 循环结束后，再次更新最大连续天数
+
+
+    // --- 4. 更新 UI 标签 ---
+    ui->totalTimeLabel->setText(QString("专注时间总计\n%1 小时 %2 分钟")
+                                    .arg(totalMinutes / 60)
+                                    .arg(totalMinutes % 60));
+    ui->todayTimeLabel->setText(QString("专注时间今日\n%1 分钟").arg(todayMinutes));
+    ui->currentStreakLabel->setText(QString("连续天数当前\n%1 天").arg(currentStreak));
+    ui->maxStreakLabel->setText(QString("连续天数最大\n%1 天").arg(maxStreak));
+}
+
+
+void Widget::setupDistributionChart() {
+    distributionChart = new QChart();
+    distributionChart->setTitle("专注时间分布");
+    distributionChart->setTitleBrush(Qt::white);
+    distributionChart->setBackgroundBrush(QColor(30, 30, 30));
+    distributionChart->setPlotAreaBackgroundBrush(QColor(30, 30, 30)); // 绘制区域背景色
+    distributionChart->legend()->setVisible(false); // 隐藏图例（图表下方的小方块）
+
+    distributionSeries = new QLineSeries();
+    distributionSeries->setName("时间分布");
+    distributionSeries->setColor(QColor(0, 160, 255));
+    distributionSeries->setPointsVisible(true);
+    distributionSeries->setPointLabelsVisible(false);
+    distributionChart->addSeries(distributionSeries);
+
+
+
+
+    distributionXAxis = new QDateTimeAxis();
+    distributionXAxis->setFormat("HH:mm"); // 标签格式：小时:分钟
+    distributionXAxis->setTitleText("时间 →"); // X轴标题
+
+
+    QDateTime minTime = QDateTime(QDate(2000, 1, 1), QTime(0, 0)); // 任意基准日期
+    QDateTime maxTime = QDateTime(QDate(2000, 1, 1), QTime(23, 59, 59)).addSecs(1); // 到第二天0点
+
+    distributionXAxis->setRange(minTime, maxTime);
+    distributionXAxis->setTickCount(7); // 例如，显示00:00, 04:00, ..., 24:00
+    distributionXAxis->setLabelsAngle(0); // 标签不旋转
+    distributionXAxis->setTitleBrush(Qt::lightGray);
+    distributionXAxis->setLabelsBrush(Qt::lightGray);
+    distributionXAxis->setLinePenColor(Qt::darkGray);
+    distributionXAxis->setGridLinePen(QPen(Qt::darkGray, 1, Qt::DotLine));
+    distributionChart->addAxis(distributionXAxis, Qt::AlignBottom);
+    distributionSeries->attachAxis(distributionXAxis);
+
+    // --- Y轴 (比例或小时数) ---
+    QValueAxis *yAxis = new QValueAxis();
+    yAxis->setTitleText("比例"); // Y轴标题 (图片中是“ratio”)
+    yAxis->setLabelFormat("%.1f"); // 标签格式：保留一位小数，例如 0.5
+    yAxis->setRange(0, 1.0); // 范围从 0 到 1.0 (假设是比例)
+    yAxis->setTickInterval(0.1); // 每0.1一个刻度
+    yAxis->setTitleBrush(Qt::lightGray);
+    yAxis->setLabelsBrush(Qt::lightGray);
+    yAxis->setLinePenColor(Qt::darkGray);
+    yAxis->setGridLinePen(QPen(Qt::darkGray, 1, Qt::DotLine));
+    distributionChart->addAxis(yAxis, Qt::AlignRight); // 将 Y 轴添加到图表右侧
+    distributionSeries->attachAxis(yAxis); // 将折线系列关联到 Y 轴
+
+
+    distributionChartView = new QChartView(distributionChart);
+    distributionChartView->setRenderHint(QPainter::Antialiasing); // 抗锯齿，使线条更平滑
+    distributionChartView->setMinimumHeight(300); // 设置最小高度，确保图表有足够空间
+
+    distributionChartView->setStyleSheet(R"(
+        QChartView {
+            background-color: #1e1e1e; /* 确保背景色与你的UI主题一致，或与QChart背景色一致 */
+            border-radius: 8px; /* 设置圆角半径，根据你的图片效果调整 */
+            border: 1px solid #3a3a3a; /* 可选：添加一个细边框，让圆角更明显 */
+        }
+    )");
+}
+
+void Widget::updateDistributionChart() {
+    distributionSeries->clear(); // 清除现有数据点
+
+
+    QMap<int, int> minuteOfDayMinutes;
+    for (int i = 0; i < 1440; ++i) {
+        minuteOfDayMinutes[i] = 0;
+    }
+
+
+    int totalDaysWithActivity = 0;
+    QSet<QDate> uniqueDatesWithActivity;
+
+    for (const auto& data : fanqie_data_queue) {
+        if (data.total_minute > 0) {
+            uniqueDatesWithActivity.insert(data.date);
+            for (const auto& slot : data.fanqie_slots_paired) {
+                // 计算每个时段的开始和结束总分钟数（从00:00开始）
+                int startTotalMinutes = slot.first.hour() * 60 + slot.first.minute();
+                int endTotalMinutes = slot.second.hour() * 60 + slot.second.minute();
+
+                // 确保结束时间在开始时间之后（处理跨天情况，但这里简化为不跨天）
+                if (endTotalMinutes < startTotalMinutes) {
+                    endTotalMinutes += 24 * 60; // 跨天处理，确保正确计算
+                }
+
+                for (int m = startTotalMinutes; m < endTotalMinutes; ++m) {
+                    minuteOfDayMinutes[m % 1440]++; // 每个分钟点都加1（表示有活动）
+                }
+            }
+        }
+    }
+    totalDaysWithActivity = uniqueDatesWithActivity.size();
+
+
+    // 计算每个分钟点的平均活跃度（比例）并添加到折线系列
+    double maxRatio = 0.0;
+    if (totalDaysWithActivity > 0) {
+        for (int m = 0; m < 1440; ++m) { // 遍历一天中的每分钟
+            // 每10分钟采样一次数据点
+            if (m % 10 == 0) {
+                double ratio = static_cast<double>(minuteOfDayMinutes.value(m, 0)) / totalDaysWithActivity;
+
+                // --- 关键修改：X轴数据转换为 QDateTime ---
+                QDateTime xDateTime(QDate(2000, 1, 1), QTime(0, 0).addSecs(m * 60)); // 转换为QDateTime
+                distributionSeries->append(xDateTime.toMSecsSinceEpoch(), ratio); // X轴使用毫秒
+                // ------------------------------------------
+
+                if (ratio > maxRatio) maxRatio = ratio;
+            }
+        }
+    }
+
+
+    // 确保 24:00 点与 00:00 点数据一致
+    if (!distributionSeries->points().isEmpty()) {
+        double firstY = distributionSeries->at(0).y();
+        QDateTime xDateTime(QDate(2000, 1, 1), QTime(23, 59, 59).addSecs(1)); // 24:00
+        distributionSeries->append(xDateTime.toMSecsSinceEpoch(), firstY);
+    }
+
+
+
+    if (!distributionSeries->points().isEmpty()) {
+        QValueAxis *yAxis = qobject_cast<QValueAxis*>(distributionChart->axes(Qt::Vertical).first());
+        yAxis->setRange(0, qCeil(maxRatio / 0.1) * 0.1 + 0.1);
+        if (yAxis->max() < 0.2) yAxis->setMax(0.2); // 避免 Y 轴范围过小，至少显示到 0.2
+    }
+}
