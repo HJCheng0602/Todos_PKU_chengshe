@@ -5,6 +5,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 QT += webenginewidgets
 QT += core gui network
 QT += network
+QT += core gui widgets charts
 
 CONFIG += c++17
 
@@ -13,6 +14,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    activitycalendarview.cpp \
     browserwindow.cpp \
     choosetime_style_widget.cpp \
     chooseweek_style_widget.cpp \
@@ -34,6 +36,7 @@ SOURCES += \
     deepseekclient.cpp
 
 HEADERS += \
+    activitycalendarview.h \
     browserwindow.h \
     choosetime_style_widget.h \
     chooseweek_style_widget.h \
