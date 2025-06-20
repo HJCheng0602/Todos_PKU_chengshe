@@ -400,7 +400,7 @@ QPushButton:checked {
     </sizepolicy>
    </property>
    <property name="currentIndex">
-    <number>6</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="pushButton_4">
@@ -1536,10 +1536,10 @@ image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>27</x>
-        <y>113</y>
-        <width>706</width>
-        <height>272</height>
+        <x>28</x>
+        <y>115</y>
+        <width>587</width>
+        <height>219</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="setting_grid_layout">
@@ -3319,7 +3319,7 @@ image: url(:/Themes/Assets/Themes/backgrounds/beach/2560x1600.jpg);
        <enum>QTabWidget::TabShape::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>

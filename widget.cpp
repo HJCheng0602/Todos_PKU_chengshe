@@ -322,6 +322,14 @@ Widget::Widget(QWidget *parent)
     static_cast<QVBoxLayout*>(widget3Layout)->addLayout(statsLayout); // 添加统计布局
     static_cast<QVBoxLayout*>(widget3Layout)->addWidget(calendarView); // 添加日历视图
 
+    ui->widget_3->setStyleSheet(R"(
+    QWidget#widget_3 {
+            background-color: #1e1e1e; /* 确保背景色与你的UI主题一致，或与QChart背景色一致 */
+            border-radius: 8px; /* 设置圆角半径，根据你的图片效果调整 */
+            border: 1px solid #3a3a3a; /* 可选：添加一个细边框，让圆角更明显 */
+}
+    )");
+
 
 
     // --- 模拟数据填充和更新 ---
@@ -329,16 +337,6 @@ Widget::Widget(QWidget *parent)
     updateStatistics(); // 这个函数现在需要更新那些可能在 widget_3 里面的 QLabel
     calendarView->setData(fanqie_data_queue);
 
-    // 如果趋势图和分布图不在 ui->widget_3 里，那么它们应该有自己的布局和父容器
-    // 确保它们被正确地添加到你的MainWindow的整体布局中
-    // setupTrendChart();
-    // mainLayout->addWidget(trendChartView); // 这需要在你MainWindow的整体布局中添加
-
-    // setupDistributionChart();
-    // mainLayout->addWidget(distributionChartView); // 同上
-
-    // 如果你的趋势图和分布图是显示在QStackedWidget的某个页面里，
-    // 你需要将它们添加到对应的QStackedWidget页面中。
 
     QVBoxLayout *widget5Layout = qobject_cast<QVBoxLayout*>(ui->widget_5->layout());
     if (!widget5Layout) {
@@ -2642,18 +2640,18 @@ void Widget::populateSampleFanqieData() {
         data.total_minute = 0; // 默认当天没有活动
 
         // 随机生成一些番茄钟时段，模拟活动
-        // int numSlots = numSlotsDist(gen); // 使用生成器获取随机数
-        // for (int j = 0; j < numSlots; ++j) {
-        //     int startHour = startHourDist(gen);
-        //     int startMinute = startMinuteDist(gen);
-        //     QTime startTime(startHour, startMinute);
+        int numSlots = numSlotsDist(gen); // 使用生成器获取随机数
+        for (int j = 0; j < numSlots; ++j) {
+            int startHour = startHourDist(gen);
+            int startMinute = startMinuteDist(gen);
+            QTime startTime(startHour, startMinute);
 
-        //     int durationMinutes = durationDist(gen);
-        //     QTime endTime = startTime.addSecs(durationMinutes * 60);
+            int durationMinutes = durationDist(gen);
+            QTime endTime = startTime.addSecs(durationMinutes * 60);
 
-        //     data.fanqie_slots_paired.append(qMakePair(startTime, endTime));
-        //     data.total_minute += durationMinutes;
-        // }
+            data.fanqie_slots_paired.append(qMakePair(startTime, endTime));
+            data.total_minute += durationMinutes;
+        }
          fanqie_data_queue.enqueue(data);
     }
 

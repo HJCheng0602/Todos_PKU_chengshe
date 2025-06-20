@@ -27,7 +27,7 @@ SmallCustomButton::SmallCustomButton(const QString &text, const QString &id, QWi
     editButton = new QPushButton("修改", this);
     title = text;
     editButton->setText(title);
-    editButton->setMinimumSize(QSize(165, 40));
+    editButton->setMinimumSize(QSize(187, 40));
     editButton->setStyleSheet("QPushButton { "
                               "background-color: rgba(0, 0, 0, 180); "
                               "color: white; "
