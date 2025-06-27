@@ -1,4 +1,5 @@
 <RCC>
+
     <qresource prefix="/Themes">
         <file>Assets/Themes/backgrounds/beach/2560x1600.jpg</file>
         <file>Assets/Themes/backgrounds/beach/thumb.jpg</file>
