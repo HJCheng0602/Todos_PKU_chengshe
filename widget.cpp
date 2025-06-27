@@ -2463,7 +2463,7 @@ void  Widget::update_deepseek_suggestion()
     prompt += "\n请在考虑课程时间的前提下，合理安排今日待办事项的完成时间，并避免时间冲突。如果有空余时间，也可以安排休息或复盘时间。";
 
     // 调用模型请求
-    temp.setApiKey(QString("sk-e453fe48eee14f0598370477d903bf76"));
+    temp.setApiKey(QString(""));// api key format: sk-XXXXXXXXXXXXXXX
     qDebug()<<prompt;
     temp.sendPrompt(prompt);
 
@@ -2488,7 +2488,7 @@ void  Widget::update_deepseek_suggestion()
 
 void Widget::on_input_question_returnPressed()
 {
-    chat.setApiKey("sk-e453fe48eee14f0598370477d903bf76");
+    chat.setApiKey("");  // api key format: sk-XXXXXXXXXXXXXXX
     QString question_text = ui->input_question->text().trimmed();
     if (question_text.isEmpty()) return;
 
