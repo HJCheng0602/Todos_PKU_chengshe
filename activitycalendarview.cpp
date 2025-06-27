@@ -11,6 +11,7 @@ ActivityCalendarView::ActivityCalendarView(QWidget *parent)
     setMinimumHeight(7 * (m_squareSize + m_spacing) + 20); // 确保有足够的高度显示一周7天
 }
 
+
 void ActivityCalendarView::setData(const QQueue<fanqie_data>& dataQueue)
 {
     m_dailyActivityMinutes.clear();
