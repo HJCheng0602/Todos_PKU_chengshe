@@ -14,6 +14,7 @@ struct fanqie_data
     int total_minute;
 };
 
+
 class ActivityCalendarView : public QWidget
 {
     Q_OBJECT
