@@ -11,7 +11,7 @@
 >
 >提取码：89eE
 
-- 源代码在`/codes`文件夹内，使用`Qt creater`打开其中的`qt_test.pro`文件即可打开本项目。
+### ***- 源代码在`/codes`文件夹内，使用`Qt creater`打开其中的`qt_test.pro`文件即可打开本项目。***
 
 
 
